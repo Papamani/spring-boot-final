@@ -32,7 +32,7 @@ pipeline {
 	stage('SecurityScan')
 	{
 	steps{
-	appscan application: 'e1f0cff4-84ac-48cd-a454-3b93259a2488', credentials: 'IBMsecurityscan', email: true, failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 2), failure_condition(failureType: 'total', threshold: 10)], name: 'SecurityScan', scanner: static_analyzer(hasOptions: false, target: 'C:\\Users\\ma20090671\\Downloads\\SAClientUtil_8.0.1330_win\\SAClientUtil.8.0.1330\\bin'), type: 'Static Analyzer', wait: true
+	appscan application: 'e1f0cff4-84ac-48cd-a454-3b93259a2488', credentials: 'IBMsecurityscan', name: 'myTest', scanner: dynamic_analyzer(hasOptions: false, optimization: 'Normal', scanType: 'Staging', target: 'http://13.233.153.114:8091/myWebApp_Test-1/'), type: 'Dynamic Analyzer'
 	}
 	}
       }
