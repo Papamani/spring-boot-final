@@ -32,7 +32,7 @@ pipeline {
 	stage('SecurityScan')
 	{
 	steps{
-	appscan application: 'e1f0cff4-84ac-48cd-a454-3b93259a2488', credentials: 'IBMsecurityscan', email: false, failBuild: false, failBuildNonCompliance: false, failureConditions: [], name: 'myTest', scanner: dynamic_analyzer(hasOptions: true, loginPassword: <object of type hudson.util.Secret>, loginUser: 'jarvis2', optimization: 'Normal', scanType: 'Staging', target: 'http://13.233.153.114:8091/myWebApp_Test-1/'), target: '', type: 'Dynamic Analyzer', wait: false
+	appscan application: 'e1f0cff4-84ac-48cd-a454-3b93259a2488', credentials: 'IBMsecurityscan', email: false, failBuild: false, failBuildNonCompliance: false, failureConditions: [], name: 'myTest', scanner: dynamic_analyzer(hasOptions: true, loginPassword: 'test2', loginUser: 'jarvis2', optimization: 'Normal', scanType: 'Staging', target: 'http://13.233.153.114:8091/myWebApp_Test-1/'), target: '', type: 'Dynamic Analyzer', wait: false
 	}
 	}
       }
