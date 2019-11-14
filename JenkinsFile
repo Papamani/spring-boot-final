@@ -17,6 +17,11 @@ pipeline {
                sonar 'SONAR'
             }
         }
+	stage('Security Scan'){
+	steps{
+	appscan application: 'e1f0cff4-84ac-48cd-a454-3b93259a2488', credentials: 'IBMsecurityscan', email: true, failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 100), failure_condition(failureType: 'total', threshold: 100)], name: 'Security Test', scanner: static_analyzer(hasOptions: false, target: '/var/lib/jenkins/workspace/Jarvis5'), type: 'Static Analyzer', wait: true
+	}
+	}
 	     stage('Nexus') {
     		 steps{
           		nexus 'NEXUS' 
