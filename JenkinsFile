@@ -12,7 +12,7 @@ pipeline {
                 build 'BUILD'
             }
         }
-        stage('SonarQube Analysis'){
+        /*stage('SonarQube Analysis'){
             steps{
                sonar 'SONAR'
             }
@@ -22,7 +22,7 @@ pipeline {
           		nexus 'NEXUS' 
        			}
 		   }
-		   
+	*/	   
 	stage ('Test Environment')
 	{
 		steps{
